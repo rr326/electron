@@ -86,6 +86,16 @@ and a directory selector, so if you set `properties` to
 `['openFile', 'openDirectory']` on these platforms, a directory selector will be
 shown.
 
+**Bookmarks** (_macOS_ _mas_):
+
+| Build Type | securityScopedBookmarks boolean | Return Type | Return Value                   |
+|------------|---------------------------------|:-----------:|--------------------------------|
+| macOS mas  | True                            |   Success   | `['LONGBOOKMARKSTRING']`       |
+| macOS mas  | True                            |    Error    | `['']` (array of empty string) |
+| macOS mas  | False                           |      NA     | `[]` (empty array)             |
+| non mas    | any                             |      NA     | `[]` (empty array)             |
+
+
 ### `dialog.showSaveDialog([browserWindow, ]options[, callback])`
 
 * `browserWindow` [BrowserWindow](browser-window.md) (optional)
@@ -116,6 +126,15 @@ The `filters` specifies an array of file types that can be displayed, see
 
 If a `callback` is passed, the API call will be asynchronous and the result
 will be passed via `callback(filename)`.
+
+**Bookmarks** (_macOS_ _mas_):
+
+| Build Type | securityScopedBookmarks boolean | Return Type | Return Value                   |
+|------------|---------------------------------|:-----------:|--------------------------------|
+| macOS mas  | True                            |   Success   | `['LONGBOOKMARKSTRING']`       |
+| macOS mas  | True                            |    Error    | `['']` (array of empty string) |
+| macOS mas  | False                           |      NA     | `[]` (empty array)             |
+| non mas    | any                             |      NA     | `[]` (empty array)             |
 
 ### `dialog.showMessageBox([browserWindow, ]options[, callback])`
 
